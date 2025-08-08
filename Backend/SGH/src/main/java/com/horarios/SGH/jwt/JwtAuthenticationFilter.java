@@ -1,8 +1,8 @@
 package com.horarios.SGH.jwt;
 
 import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.*;
@@ -10,9 +10,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-
 import com.horarios.SGH.Service.JwtService;
-
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 
@@ -23,7 +21,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private JwtService jwtService;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private @Lazy UserDetailsService userDetailsService;
 
     @Override
     protected void doFilterInternal(

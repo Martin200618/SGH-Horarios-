@@ -15,7 +15,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
       method: "POST"
     });
 
-    // Convierte la respuesta a texto 
+    // Convierte la respuesta a texto
     const data = await response.text();
 
     // Selecciona el elemento para mostrar el mensaje
